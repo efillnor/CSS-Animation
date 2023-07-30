@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animatie</title>
+    <style>
+body{
+    background-color: #050210;
+}
+
+.cerc{
+    background: linear-gradient(#fb5dad -30% , #55fba0 , #b97aff 130%);
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    animation: rotatie 1.5s linear infinite;
+    filter: contrast(1.2);
+    
+    
+}
+
+.cerc::after{
+position: absolute;
+content: '';
+background: linear-gradient(#fb5dad, #55fba0, #b97aff);
+border-radius: 50%;
+height: 350px;
+width: 350px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: -1;
+filter: blur(40px) opacity(60%);
+}
+
+.roata{
+background-color: #050210;
+border-radius: 50%;
+height: 250px;
+width: 250px;
+position: absolute;
+inset: 0;
+margin: auto;
+}
+
+.roata::after{
+position: absolute;
+content: '';
+background:#0b0424;
+border-radius: 50%;
+height: 100px;
+width: 100px;
+inset: 0;
+margin: auto;
+animation: scalare 1.2s ease-out infinite;
+}
+
+
+
+@keyframes rotatie{
+0%{transform: rotateZ(0);}
+100%{transform: rotateZ(360deg);}
+}
+
+@keyframes rotatieinvers{
+0%{transform: rotateZ(0);}
+100%{transform: rotateZ(80deg);}
+}
+
+@keyframes scalare {
+    0%{
+        height: 10px;
+        width: 10px;
+    }
+    60%{
+        background-color: #0b0424;
+    }
+    850%{
+        background-color: #070318; 
+    }
+    100%{
+        height: 250px;
+        width: 250px;
+        background-color: #070318;
+    };
+}
+
+
+
+    </style>
+</head>
+<body>
+  <div class="cerc"></div>
+    <div class="roata"></div>
+</body>
+</html>
